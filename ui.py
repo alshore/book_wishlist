@@ -55,6 +55,24 @@ def get_new_book_info():
     author = input('Enter author: ')
     return Book(title, author)
 
+def edit(id):
+    while True:
+        try:
+            edit = input("Do you want to change the author? (y for yes): ")
+                if edit == 'y':
+                    book.set_author(input("Enter the name of the author: "))
+                    break
+                else:
+                    edit = input("Do you want to change the title? (y for yes): ")
+                    if edit == 'y':
+                        book.set_title(input("Enter the name of the title: "))
+                        break
+                    else:
+                        print("Sorry, I don't think you really want to change anything.")
+                        break
+        except ValueError:
+                print("Please select which value you'd like to change using 'y'. ")
+
 
 def message(msg):
     '''Display a message to the user'''
