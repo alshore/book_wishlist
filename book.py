@@ -6,17 +6,25 @@ class Book:
 
     NO_ID = -1
 
-    def __init__(self, title, author, read=False, dateread='', id=NO_ID):
+    def __init__(self, title, author, read=False, date_read='', id=NO_ID):
         '''Default book is unread, and has no ID'''
         self.title = title
         self.author = author
         self.read = read
-        self.dateread = dateread
-        self.id=id
+        self.date_read = date_read
+        self.id = id
 
 
     def set_id(self, id):
         self.id = id
+
+
+    def set_author(self, author):
+        self.author = author
+
+
+    def set_title(self, title):
+        self.title = title
 
 
     def __str__(self):
@@ -25,7 +33,6 @@ class Book:
         if self.read:
             read_str = 'yes'
             read_date = datetime.date.today()
-
         id_str = self.id
         if id == -1:
             id_str = '(no id)'
@@ -35,4 +42,5 @@ class Book:
 
 
     def __eq__(self, other):
-        return self.title == other.title and self.author == other.author and self.read == other.read and self.dateread == other.dateread and self.id==other.id
+        return self.title == other.title and self.author == other.author and self.read == other.read and \
+               self.date_read == other.dateread and self.id == other.id

@@ -18,6 +18,9 @@ def handle_choice(choice):
     elif choice == '4':
         new_book()
 
+    elif choice == '5':
+        edit_entry()
+
     elif choice == 'q':
         quit()
 
@@ -45,6 +48,13 @@ def book_read():
     else:
         ui.message('Book id not found in database')
 
+
+def edit_entry():
+    book_id = ui.ask_for_book_id()
+    if datastore.edit_entry(book_id):
+        ui.message('Successfully updated')
+    else:
+        ui.message('Book id not found in database')
 
 def new_book():
     '''Get info from user, add new book'''

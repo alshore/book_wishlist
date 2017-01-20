@@ -82,6 +82,26 @@ def generate_id():
     return counter
 
 
+def edit_entry(book_id):
+
+    global book_list
+
+    for book in book_list:
+
+        if book.id == book_id:
+            edit = input("Do you want to change the author? (y for yes): ")
+            if edit == 'y':
+                book.set_author(input("Enter the name of the author: "))
+            else:
+                edit = input("Do you want to change the title? (y for yes): ")
+                if edit == 'y':
+                    book.set_title(input("Enter the name of the title: "))
+            return True
+
+        else:
+            raise ValueError("Didn't find that book ID.")
+
+
 def set_read(book_id, read):
     '''Update book with given book_id to read. Return True if book is found in DB and update is made, False otherwise.'''
 
