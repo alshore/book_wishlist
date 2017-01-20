@@ -1,4 +1,4 @@
-
+import datetime
 import os
 from book import Book
 
@@ -90,6 +90,7 @@ def set_read(book_id, read):
     for book in book_list:
 
         if book.id == book_id:
+            book.dateread = datetime.date.today()
             book.read = True
             return True
 
@@ -118,7 +119,7 @@ def make_output_data():
     output_data = []
 
     for book in book_list:
-        output = [ book.title, book.author, str(book.read), str(book.id) ]
+        output = [ book.title, book.author, str(book.read), str(book.dateread), str(book.id) ]
         output_str = separator.join(output)
         output_data.append(output_str)
 

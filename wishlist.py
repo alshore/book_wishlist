@@ -1,4 +1,4 @@
-#Main program
+# Main program
 
 import ui, datastore
 from book import Book
