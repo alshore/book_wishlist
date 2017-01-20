@@ -127,7 +127,7 @@ def make_book_list(string_from_file):
 
     for book_str in books_str:
         data = book_str.split(separator)
-        book = Book(data[0], data[1], data[2] == 'True', int(data[3]))
+        book = Book(data[0], data[1], data[2] == 'True', data[3], int(data[4]))
         book_list.append(book)
 
 
