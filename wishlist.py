@@ -54,7 +54,7 @@ def book_read():
 
 def edit_entry():
     book_id = ui.ask_for_book_id()
-    if datastore.edit_entry(book_id, True):
+    if datastore.edit_entry(book_id):
         ui.message('Successfully updated')
     else:
         ui.message('Book id not found in database')
@@ -81,8 +81,9 @@ def find_entry():
     '''Get info from user, find existing book'''
     book_search = ui.get_search_info()
     if datastore.find_entry(book_search):
+        book = datastore.find_entry(book_search)
         ui.message('Here are the results: ')
-        ui.print_results(book_search)
+        ui.print_results(book)
     else:
         ui.message('No results found.')
 

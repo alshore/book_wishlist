@@ -121,9 +121,7 @@ def find_entry(book_search):
     for book in book_list:
 
         if book.title == book_search or book.author == book_search:
-            return True
-        else:
-            return False
+            return book
 
 
 def set_read(book_id, read):
