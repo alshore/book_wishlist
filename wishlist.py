@@ -51,7 +51,7 @@ def book_read():
 
 def edit_entry():
     book_id = ui.ask_for_book_id()
-    if datastore.edit_entry(book_id):
+    if datastore.edit_entry(book_id, True):
         ui.message('Successfully updated')
     else:
         ui.message('Book id not found in database')
@@ -59,8 +59,18 @@ def edit_entry():
 def new_book():
     '''Get info from user, add new book'''
     new_book = ui.get_new_book_info()
-    datastore.add_book(new_book)
-    ui.message('Book added: ' + str(new_book))
+    already_read = datastore.check_book_list(new_book.title)
+    if already_read:
+        ui.message('Book already read. ')
+        add_anyway = ui.add_or_skip()
+        if add_anyway:
+            datastore.add_book(new_book)
+            ui.message('Book added: ' + str(new_book))
+        else:
+            print('Entry Canceled')
+    else:
+        datastore.add_book(new_book)
+        ui.message('Book added: ' + str(new_book))
 
 
 def quit():

@@ -43,4 +43,4 @@ class Book:
 
     def __eq__(self, other):
         return self.title == other.title and self.author == other.author and self.read == other.read and \
-               self.date_read == other.dateread and self.id == other.id
+               self.date_read == other.date_read and self.id == other.id

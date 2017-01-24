@@ -76,6 +76,18 @@ def add_book(book):
     book_list.append(book)
 
 
+def check_book_list(book_title):
+
+    global book_list
+
+    for book in book_list:
+
+        if book.title == book_title:
+            return True
+        else:
+            return False
+
+
 def generate_id():
     global counter
     counter += 1
@@ -110,7 +122,7 @@ def set_read(book_id, read):
     for book in book_list:
 
         if book.id == book_id:
-            book.dateread = datetime.date.today()
+            book.date_read = datetime.date.today()
             book.read = True
             return True
 
@@ -139,7 +151,7 @@ def make_output_data():
     output_data = []
 
     for book in book_list:
-        output = [ book.title, book.author, str(book.read), str(book.dateread), str(book.id) ]
+        output = [ book.title, book.author, str(book.read), str(book.date_read), str(book.id) ]
         output_str = separator.join(output)
         output_data.append(output_str)
 
