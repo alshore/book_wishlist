@@ -11,6 +11,7 @@ def display_menu_get_choice():
         3. Mark a book as read
         4. Add book to wishlist
         5. Edit entry (author/title)
+        6. Search for a book (read or unread)
         q. Quit
     ''')
 
@@ -55,6 +56,17 @@ def add_or_skip():
         return True
     else:
         return False
+
+
+def get_search_info():
+
+    search = input("Enter an author or title to search for: ")
+    return search
+
+
+def print_results(book):
+
+    print(book)
 
 
 def get_new_book_info():

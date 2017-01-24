@@ -114,6 +114,18 @@ def edit_entry(book_id):
             raise ValueError("Didn't find that book ID.")
 
 
+def find_entry(book_search):
+
+    global book_list
+
+    for book in book_list:
+
+        if book.title == book_search or book.author == book_search:
+            return True
+        else:
+            return False
+
+
 def set_read(book_id, read):
     '''Update book with given book_id to read. Return True if book is found in DB and update is made, False otherwise.'''
 
