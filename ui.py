@@ -23,7 +23,7 @@ def display_menu_get_choice():
 
 
 def show_list(books):
-    ''' Format and display a list of book objects'''
+    """Format and display a list of book objects"""
 
     if len(books) == 0:
         print ('* No books *')
@@ -34,7 +34,7 @@ def show_list(books):
 
     print('* {} book(s) *'.format(len(books)))
 
-def sort_by_title():
+def sort_by_title(books):
     if len(books) == 0:
         print ('*No books *')
         return
@@ -52,12 +52,12 @@ def ask_for_book_id():
             if id >= 0:
                 return id
             else:
-                print('Please enter a positive number ')
+                print('Please enter a positive number: ')
         except ValueError:
-            print('Please enter an integer number')
+            print('Please enter an integer number: ')
 
 def ask_for_book_rating():
-    rating = input('Please enter your book rating')
+    rating = input('Please enter your book rating: ')
     return Book(rating)
 
 def add_or_skip():

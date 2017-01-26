@@ -17,7 +17,7 @@ def setup():
 
     global counter
 
-    try :
+    try:
         with open(BOOKS_FILE_NAME) as f:
             data = f.read()
             make_book_list(data)
@@ -77,7 +77,7 @@ def add_book(book):
 
 def delete_book(book):
     global book_list
-    book_list.remove(book_id)
+    book_list.remove(book)
 
 def check_book_list(book_title):
 
@@ -141,7 +141,7 @@ def set_read(book_id, read):
 
     return False # return False if book id is not found
 
-def set_rating(book,_id, rating):
+def set_rating(book_id, rating):
     global book_list
     for book in book_list:
         if book.id == book_id:
@@ -158,7 +158,7 @@ def make_book_list(string_from_file):
 
     for book_str in books_str:
         data = book_str.split(separator)
-        book = Book(data[0], data[1], data[2] == 'True', data[3], int(data[4]))
+        book = Book(data[0], data[1], data[2] == 'True', data[3], int(data[4]), int(data[5]))
         book_list.append(book)
 
 
@@ -170,7 +170,7 @@ def make_output_data():
     output_data = []
 
     for book in book_list:
-        output = [ book.title, book.author, str(book.read), str(book.date_read), str(book.id) ]
+        output = [ book.title, book.author, str(book.read), str(book.date_read), str(book.id), str(book.rating) ]
         output_str = separator.join(output)
         output_data.append(output_str)
 

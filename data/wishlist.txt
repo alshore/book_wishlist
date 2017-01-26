@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-Crime and Punishment^^^Fyodor Dostoyevsky^^^True^^^2017-01-20^^^1
-=======
-Swan's Way^^^Marcel Proust^^^True^^^1
-Twilight^^^Stephanie Meyers^^^True^^^2
->>>>>>> delete_book
+Crime and Punishment^^^Fyodor Dostoyevsky^^^True^^^2017-01-20^^^1^^^6
+Swan's Way^^^Marcel Proust^^^True^^^2017--1-23^^^2^^^8
+Twilight^^^Stephanie Meyers^^^True^^^2017-01-19^^^3^^^3

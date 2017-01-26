@@ -2,12 +2,12 @@ import datetime
 
 class Book:
 
-    ''' Represents one book in a user's list of books'''
+    """ Represents one book in a user's list of books"""
 
     NO_ID = -1
 
-    def __init__(self, title, author, read=False, date_read='', id=NO_ID):
-        '''Default book is unread, and has no ID'''
+    def __init__(self, title, author, read=False, date_read='', id=NO_ID, rating=''):
+        """Default book is unread, and has no ID"""
         self.title = title
         self.author = author
         self.read = read
@@ -45,4 +45,4 @@ class Book:
 
     def __eq__(self, other):
         return self.title == other.title and self.author == other.author and self.read == other.read and \
-               self.date_read == other.date_read and self.id == other.id
+               self.date_read == other.date_read and self.id == other.id and self.rating == other.rating

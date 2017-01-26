@@ -68,7 +68,7 @@ def book_rating():
     else:
         ui.message('Book id not found in database')
     rating = ui.ask_for_book_rating()
-    datastore.set_rating()
+    datastore.set_rating(book_id, rating)
 
 def edit_entry():
     book_id = ui.ask_for_book_id()
