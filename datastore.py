@@ -128,7 +128,8 @@ def find_entry(book_search):
 
 
 def set_read(book_id, read):
-    '''Update book with given book_id to read. Return True if book is found in DB and update is made, False otherwise.'''
+    """Update book with given book_id to read. Return True if \
+    book is found in DB and update is made, False otherwise."""
 
     global book_list
 
