@@ -13,6 +13,8 @@ class Book:
         self.read = read
         self.date_read = date_read
         self.id = id
+        self.rating = rating
+
 
 
     def set_id(self, id):

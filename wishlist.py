@@ -29,7 +29,6 @@ def handle_choice(choice):
     elif choice == '7':
         delete_book()
 
-
     elif choice == 'q':
         quit()
 
@@ -52,6 +51,7 @@ def show_read():
 def book_read():
     ''' Get choice from user, edit datastore, display success/error'''
     book_id = ui.ask_for_book_id()
+    rating = ui.ask_for_book_rating() #appended this 
     if datastore.set_read(book_id, True):
         ui.message('Successfully updated')
     else:
@@ -96,8 +96,8 @@ def find_entry():
 def delete_book(): #2 kang001
     '''Get book id from user, delete book'''
     book_id = ui.ask_for_book_id()
-    delete_book = ui.delete_book_info()
-    datastore.delete_book
+    delete_book = datastore.delete_book(book_id)
+
 
 
 def quit():

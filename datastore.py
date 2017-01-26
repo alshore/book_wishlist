@@ -11,8 +11,7 @@ separator = '^^^'  # a string probably not in any valid data relating to a book
 book_list = []
 counter = 0
 
-<<<<<<< HEAD
-=======
+
 def setup():
     ''' Read book info from file, if file exists. '''
 
@@ -76,10 +75,9 @@ def add_book(book):
     book.id = generate_id()
     book_list.append(book)
 
-def delete_book(book)
+def delete_book(book):
     global book_list
     book_list.remove(book_id)
-
 
 def check_book_list(book_title):
 

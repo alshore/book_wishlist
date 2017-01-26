@@ -8,7 +8,7 @@ def display_menu_get_choice():
     print('''
         1. Show unread books (wishlist)
         2. Show books that have been read
-        3. Mark a book as read
+        3. Mark a book as read + give it a rating
         4. Add book to wishlist
         5. Edit entry (author/title)
         6. Search for a book (read or unread)
@@ -47,7 +47,10 @@ def ask_for_book_id():
                 print('Please enter a positive number ')
         except ValueError:
             print('Please enter an integer number')
-
+            
+def ask_for_book_rating():
+    rating = input('Please enter your book rating')
+    return Book(rating)
 
 def add_or_skip():
 
