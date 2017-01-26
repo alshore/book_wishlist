@@ -13,6 +13,7 @@ def display_menu_get_choice():
         5. Edit entry (author/title)
         6. Search for a book (read or unread)
         7. Delete a book from wishlist
+        8. Add book rating
         q. Quit
     ''')
 
@@ -47,7 +48,7 @@ def ask_for_book_id():
                 print('Please enter a positive number ')
         except ValueError:
             print('Please enter an integer number')
-            
+
 def ask_for_book_rating():
     rating = input('Please enter your book rating')
     return Book(rating)

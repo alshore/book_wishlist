@@ -29,6 +29,9 @@ def handle_choice(choice):
     elif choice == '7':
         delete_book()
 
+    elif choice == '8':
+        book_rating()
+
     elif choice == 'q':
         quit()
 
@@ -51,12 +54,20 @@ def show_read():
 def book_read():
     ''' Get choice from user, edit datastore, display success/error'''
     book_id = ui.ask_for_book_id()
-    rating = ui.ask_for_book_rating() #appended this 
     if datastore.set_read(book_id, True):
         ui.message('Successfully updated')
     else:
         ui.message('Book id not found in database')
 
+def book_rating():
+    ''' Get choice from user, edit datastore, display success/error'''
+    book_id = ui.ask_for_book_id()
+    if datastore.set_read(book_id, True):
+        ui.message('Successfully updated')
+    else:
+        ui.message('Book id not found in database')
+    rating = ui.ask_for_book_rating()
+    datastore.set_rating()
 
 def edit_entry():
     book_id = ui.ask_for_book_id()

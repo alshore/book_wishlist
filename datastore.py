@@ -141,7 +141,13 @@ def set_read(book_id, read):
 
     return False # return False if book id is not found
 
-
+def set_rating(book,_id, rating):
+    global book_list
+    for book in book_list:
+        if book.id == book_id:
+            book.rating = rating
+            return True
+    return False
 
 def make_book_list(string_from_file):
     ''' turn the string from the file into a list of Book objects'''
