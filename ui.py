@@ -34,6 +34,13 @@ def show_list(books):
 
     print('* {} book(s) *'.format(len(books)))
 
+def sort_by_title():
+    if len(books) == 0:
+        print ('*No books *')
+        return
+    for book in books:
+        booksort = books.title.sort()
+        print(booksort)
 
 def ask_for_book_id():
 

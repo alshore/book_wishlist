@@ -49,6 +49,7 @@ def show_read():
     '''Fetch and show all read books'''
     read = datastore.get_books(read=True)
     ui.show_list(read)
+    ui.sort_by_title
 
 
 def book_read():
