@@ -20,16 +20,15 @@ def handle_choice(choice):
     elif choice == '4':
         new_book()
 
-<<<<<<< HEAD
     elif choice == '5':
         edit_entry()
 
     elif choice == '6':
         find_entry()
-=======
-    elif choice == '5': #kang001
+
+    elif choice == '7':
         delete_book()
->>>>>>> delete_book
+
 
     elif choice == 'q':
         quit()
