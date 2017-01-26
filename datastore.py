@@ -44,7 +44,7 @@ def shutdown():
     try:
         os.mkdir(DATA_DIR)
     except FileExistsError:
-        pass # Ignore - if directory exists, don't need to do anything. 
+        pass # Ignore - if directory exists, don't need to do anything.
 
     with open(BOOKS_FILE_NAME, 'w') as f:
         f.write(output_data)
@@ -69,11 +69,14 @@ def get_books(**kwargs):
 
 def add_book(book):
     ''' Add to db, set id value, return Book'''
-
     global book_list
 
     book.id = generate_id()
     book_list.append(book)
+
+def delete_book(book)
+    global book_list
+    book_list.remove(book_id)
 
 
 def generate_id():

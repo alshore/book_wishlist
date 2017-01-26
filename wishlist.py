@@ -1,7 +1,9 @@
-#Main program
+# Main program
 
-import ui, datastore
-from book import Book
+import ui
+from book_wishlist import datastore
+from book_wishlist import input_output
+from book_wishlist import book
 
 
 def handle_choice(choice):
@@ -18,7 +20,13 @@ def handle_choice(choice):
     elif choice == '4':
         new_book()
 
-    elif choice == '5': #kang001
+    elif choice == '5':
+        edit_entry()
+
+    elif choice == '6':
+        find_entry()
+
+    elif choice == '7':
         delete_book()
 
     elif choice == 'q':
@@ -49,11 +57,40 @@ def book_read():
         ui.message('Book id not found in database')
 
 
+def edit_entry():
+    book_id = ui.ask_for_book_id()
+    if datastore.edit_entry(book_id):
+        ui.message('Successfully updated')
+    else:
+        ui.message('Book id not found in database')
+
+
 def new_book():
     '''Get info from user, add new book'''
     new_book = ui.get_new_book_info()
-    datastore.add_book(new_book)
-    ui.message('Book added: ' + str(new_book))
+    already_read = datastore.check_book_list(new_book.title)
+    if already_read:
+        ui.message('Book already read. ')
+        add_anyway = ui.add_or_skip()
+        if add_anyway:
+            datastore.add_book(new_book)
+            ui.message('Book added: ' + str(new_book))
+        else:
+            print('Entry Canceled')
+    else:
+        datastore.add_book(new_book)
+        ui.message('Book added: ' + str(new_book))
+
+
+def find_entry():
+    '''Get info from user, find existing book'''
+    book_search = ui.get_search_info()
+    if datastore.find_entry(book_search):
+        book = datastore.find_entry(book_search)
+        ui.message('Here are the results: ')
+        ui.print_results(book)
+    else:
+        ui.message('No results found.')
 
 def delete_book(): #2 kang001
     '''Get book id from user, delete book'''
@@ -64,13 +101,13 @@ def delete_book(): #2 kang001
 
 def quit():
     '''Perform shutdown tasks'''
-    datastore.shutdown()
+    input_output.shutdown()
     ui.message('Bye!')
 
 
 def main():
 
-    datastore.setup()
+    input_output.setup()
 
     quit = 'q'
     choice = None
