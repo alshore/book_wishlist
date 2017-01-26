@@ -20,11 +20,16 @@ def handle_choice(choice):
     elif choice == '4':
         new_book()
 
+<<<<<<< HEAD
     elif choice == '5':
         edit_entry()
 
     elif choice == '6':
         find_entry()
+=======
+    elif choice == '5': #kang001
+        delete_book()
+>>>>>>> delete_book
 
     elif choice == 'q':
         quit()
@@ -88,6 +93,12 @@ def find_entry():
         ui.print_results(book)
     else:
         ui.message('No results found.')
+
+def delete_book(): #2 kang001
+    '''Get book id from user, delete book'''
+    book_id = ui.ask_for_book_id()
+    delete_book = ui.delete_book_info()
+    datastore.delete_book
 
 
 def quit():

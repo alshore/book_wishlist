@@ -10,8 +10,12 @@ def display_menu_get_choice():
         2. Show books that have been read
         3. Mark a book as read
         4. Add book to wishlist
+<<<<<<< HEAD
         5. Edit entry (author/title)
         6. Search for a book (read or unread)
+=======
+        5. Delete a book from wishlist
+>>>>>>> delete_book
         q. Quit
     ''')
 
